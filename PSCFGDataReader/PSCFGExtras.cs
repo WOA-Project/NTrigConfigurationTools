@@ -20,7 +20,7 @@ namespace PSCFGDataReader
                     SectionId sectionId = (SectionId)section.Header.Id;
                     Console.WriteLine("Section ID (Friendly Name): " + sectionId);
 
-                    File.WriteAllBytes($"{FilePath}_{sectionId}.bin", section.Payload);
+                    File.WriteAllBytes($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.bin", section.Payload);
 
                     using MemoryStream payloadStream = new(section.Payload);
                     using BinaryReader br = new(payloadStream);
@@ -35,7 +35,7 @@ namespace PSCFGDataReader
                             }
 
                             TopologyDataCfg topologyDataCfg = br.FromBinaryReader<TopologyDataCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", topologyDataCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", topologyDataCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenJnr:
                             if (section.Payload.Length != Marshal.SizeOf<PenJnrCfg>())
@@ -45,7 +45,7 @@ namespace PSCFGDataReader
                             }
 
                             PenJnrCfg penJnrCfg = br.FromBinaryReader<PenJnrCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penJnrCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penJnrCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenTrackingThresholds:
                             if (section.Payload.Length != Marshal.SizeOf<PenThrsAndTrackCfgTuning>())
@@ -55,7 +55,7 @@ namespace PSCFGDataReader
                             }
 
                             PenThrsAndTrackCfgTuning penThrsAndTrackCfgTuning = br.FromBinaryReader<PenThrsAndTrackCfgTuning>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penThrsAndTrackCfgTuning.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penThrsAndTrackCfgTuning.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.ReportMechanism:
                             if (section.Payload.Length != Marshal.SizeOf<ReportMechanism>())
@@ -65,7 +65,7 @@ namespace PSCFGDataReader
                             }
 
                             ReportMechanism reportMechanism = br.FromBinaryReader<ReportMechanism>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", reportMechanism.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", reportMechanism.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.TouchPostProcessing:
                             if (section.Payload.Length != Marshal.SizeOf<TouchPostProcessingCfg>())
@@ -75,7 +75,7 @@ namespace PSCFGDataReader
                             }
 
                             TouchPostProcessingCfg touchPostProcessingCfg = br.FromBinaryReader<TouchPostProcessingCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", touchPostProcessingCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", touchPostProcessingCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.Descriptor:
                             if (section.Payload.Length != Marshal.SizeOf<DescriptorsCfg>())
@@ -85,7 +85,7 @@ namespace PSCFGDataReader
                             }
 
                             DescriptorsCfg descriptorCfg = br.FromBinaryReader<DescriptorsCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", descriptorCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", descriptorCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.TouchData:
                             if (section.Payload.Length != Marshal.SizeOf<TouchTrackDataCfg>())
@@ -95,7 +95,7 @@ namespace PSCFGDataReader
                             }
 
                             TouchTrackDataCfg touchDataCfg = br.FromBinaryReader<TouchTrackDataCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", touchDataCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", touchDataCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.StaticConfig:
                             if (section.Payload.Length != Marshal.SizeOf<StaticConfig>())
@@ -105,7 +105,7 @@ namespace PSCFGDataReader
                             }
 
                             StaticConfig staticConfig = br.FromBinaryReader<StaticConfig>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", staticConfig.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", staticConfig.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.TouchDetection:
                             if (section.Payload.Length != Marshal.SizeOf<TouchDetectionCfg>())
@@ -115,7 +115,7 @@ namespace PSCFGDataReader
                             }
 
                             TouchDetectionCfg touchDetectionCfg = br.FromBinaryReader<TouchDetectionCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", touchDetectionCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", touchDetectionCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.CampoConfig:
                             if (section.Payload.Length != Marshal.SizeOf<CampoCfg>())
@@ -125,7 +125,7 @@ namespace PSCFGDataReader
                             }
 
                             CampoCfg campoConfig = br.FromBinaryReader<CampoCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", campoConfig.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", campoConfig.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.TelemetryConfig:
                             if (section.Payload.Length != Marshal.SizeOf<TelemetryCfg>())
@@ -135,7 +135,7 @@ namespace PSCFGDataReader
                             }
 
                             TelemetryCfg telemetryConfig = br.FromBinaryReader<TelemetryCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", telemetryConfig.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", telemetryConfig.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.DataSelction:
                             if (section.Payload.Length != Marshal.SizeOf<DataSelectionCfg>())
@@ -145,7 +145,7 @@ namespace PSCFGDataReader
                             }
 
                             DataSelectionCfg dataSelctionCfg = br.FromBinaryReader<DataSelectionCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", dataSelctionCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", dataSelctionCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenMagToBits:
                             if (section.Payload.Length != Marshal.SizeOf<PenMagToBitsCfg>())
@@ -155,7 +155,7 @@ namespace PSCFGDataReader
                             }
 
                             PenMagToBitsCfg penMagToBitsCfg = br.FromBinaryReader<PenMagToBitsCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penMagToBitsCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penMagToBitsCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenCenterOfMass:
                             if (section.Payload.Length != Marshal.SizeOf<PenCenterOfMassCfg>())
@@ -165,7 +165,7 @@ namespace PSCFGDataReader
                             }
 
                             PenCenterOfMassCfg penCenterOfMassCfg = br.FromBinaryReader<PenCenterOfMassCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penCenterOfMassCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penCenterOfMassCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenDigitalProcessing:
                             if (section.Payload.Length != Marshal.SizeOf<PenDigitalProcessingCfg>())
@@ -175,7 +175,7 @@ namespace PSCFGDataReader
                             }
 
                             PenDigitalProcessingCfg penDigitalProcessingCfg = br.FromBinaryReader<PenDigitalProcessingCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penDigitalProcessingCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penDigitalProcessingCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                         case SectionId.PenZeroForceInking:
                             if (section.Payload.Length != Marshal.SizeOf<PenZeroForceInkingCfg>())
@@ -185,7 +185,7 @@ namespace PSCFGDataReader
                             }
 
                             PenZeroForceInkingCfg penZeroForceInkingCfg = br.FromBinaryReader<PenZeroForceInkingCfg>();
-                            File.WriteAllText($"{FilePath}_{sectionId}.xml", penZeroForceInkingCfg.Serialize());
+                            File.WriteAllText($"{Path.GetDirectoryName(FilePath)}\\{sectionId}.xml", penZeroForceInkingCfg.Serialize(), System.Text.Encoding.Unicode);
                             break;
                     }
                 }
@@ -193,7 +193,7 @@ namespace PSCFGDataReader
                 {
                     Console.WriteLine("Unknown Section ID Friendly Name!");
 
-                    File.WriteAllBytes($"{FilePath}_{section.Header.Id}.bin", section.Payload);
+                    File.WriteAllBytes($"{Path.GetDirectoryName(FilePath)}\\{section.Header.Id}.bin", section.Payload);
                 }
 
                 Console.WriteLine();

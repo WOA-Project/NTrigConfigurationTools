@@ -352,9 +352,7 @@ namespace PSCFGDataReader
             public float PressureIIRFactorForExitInterpolation { get; set; }
             public float PositionOffsetIIRFactor { get; set; }
             public float PressureIIRFactor { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
             public float AdaptiveIIRFactor { get; set; }
-            public byte[] Unknown { get; set; }
             public float SpecialAlphaForCoMTypeChange { get; set; }
             public ushort PressureJitterRestrictorThreshold { get; set; }
             public ushort TiltJitterRestrictorThreshold { get; set; }
