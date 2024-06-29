@@ -15,7 +15,7 @@ namespace PSCFGDataReader
             try
             {
                 ptr = Marshal.AllocHGlobal(size);
-                Marshal.StructureToPtr(str, ptr, true);
+                Marshal.StructureToPtr(str!, ptr, true);
                 Marshal.Copy(ptr, arr, 0, size);
             }
             finally
@@ -33,7 +33,7 @@ namespace PSCFGDataReader
 
             // Pin the managed memory while, copy it out the data, then unpin it
             GCHandle handle = GCHandle.Alloc(bytes, GCHandleType.Pinned);
-            T theStructure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T));
+            T theStructure = (T)Marshal.PtrToStructure(handle.AddrOfPinnedObject(), typeof(T))!;
             handle.Free();
 
             return theStructure;
@@ -43,7 +43,7 @@ namespace PSCFGDataReader
         {
             T str;
             XmlSerializer serializer = new(typeof(T));
-            str = (T)serializer.Deserialize(stream);
+            str = (T)serializer.Deserialize(stream)!;
             return str;
         }
 
