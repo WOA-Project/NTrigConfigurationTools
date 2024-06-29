@@ -289,29 +289,13 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         {
             get; set;
         }
-        public uint RtiaValuePerPlatformSize
+        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 16)]
+        public ushort[] RegNibble2RtiaValue
         {
             get; set;
         }
-        public uint RtiaValueSize
-        {
-            get; set;
-        }
-        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 63)]
-        public uint[] RtiaValue
-        {
-            get; set;
-        }
-        public uint RtiaPerPlatformSize
-        {
-            get; set;
-        }
-        public uint RtiaValuePerGainSize
-        {
-            get; set;
-        }
-        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 9)]
-        public byte[] RtiaValuePerGain
+        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 6)]
+        public ushort[] BlackPrintSqrThreshold
         {
             get; set;
         }
@@ -353,10 +337,6 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         }
         [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
         public float[] PenEdgesThresholds
-        {
-            get; set;
-        }
-        public float BorderZfiPenVoltageRatio
         {
             get; set;
         }
