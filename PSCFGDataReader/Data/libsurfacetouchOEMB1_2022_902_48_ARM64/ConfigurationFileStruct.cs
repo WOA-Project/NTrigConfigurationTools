@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
 {
 
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public struct ConfigurationFileStruct
     {
         public ConfigHeaderStruct Header
@@ -127,14 +127,6 @@ namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
             get; set;
         }
         public PenDigitalProcessingCfg PenDigitalProcessingPayload
-        {
-            get; set;
-        }
-        public ConfigSectionHeader PenZeroForceInkingHeader
-        {
-            get; set;
-        }
-        public PenZeroForceInkingCfg PenZeroForceInkingPayload
         {
             get; set;
         }

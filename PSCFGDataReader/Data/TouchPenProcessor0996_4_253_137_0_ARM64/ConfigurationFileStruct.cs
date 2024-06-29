@@ -2,7 +2,7 @@ using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public struct ConfigurationFileStruct
     {
         public ConfigHeaderStruct Header

@@ -1,4 +1,5 @@
 ﻿using PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64;
+using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader
 {
@@ -21,6 +22,12 @@ namespace PSCFGDataReader
 
         public static ConfigurationFileStruct GetConfigurationFileStruct(BinaryReader br)
         {
+            int structSize = Marshal.SizeOf<ConfigurationFileStruct>();
+            if (br.BaseStream.Length != structSize)
+            {
+                throw new Exception($"Invalid Structure Length! Expected: {structSize} Actual: {br.BaseStream.Length}");
+            }
+
             return br.FromBinaryReader<ConfigurationFileStruct>();
         }
 
@@ -31,6 +38,12 @@ namespace PSCFGDataReader
 
         public static ConfigurationFileStruct GetConfigurationFileStructFromXMLStream(Stream stream)
         {
+            int structSize = Marshal.SizeOf<ConfigurationFileStruct>();
+            if (stream.Length != structSize)
+            {
+                throw new Exception($"Invalid Structure Length! Expected: {structSize} Actual: {stream.Length}");
+            }
+
             return stream.Deserialize<ConfigurationFileStruct>();
         }
 
