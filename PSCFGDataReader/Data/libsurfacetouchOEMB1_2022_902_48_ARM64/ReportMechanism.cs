@@ -57,5 +57,17 @@ namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
         {
             get; set;
         }
+        public byte IsRegionConfigSupported
+        {
+            get; set;
+        }
+        public byte IsEnableGenericCli
+        {
+            get; set;
+        }
+        public byte IsSendPenReportsPerScreen
+        {
+            get; set;
+        }
     };
 }

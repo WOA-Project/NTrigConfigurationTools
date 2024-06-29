@@ -57,5 +57,17 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         {
             get; set;
         }
+        public byte IsRegionConfigSupported
+        {
+            get; set;
+        }
+        public byte IsEnableGenericCli
+        {
+            get; set;
+        }
+        public byte IsSendPenReportsPerScreen
+        {
+            get; set;
+        }
     };
 }
