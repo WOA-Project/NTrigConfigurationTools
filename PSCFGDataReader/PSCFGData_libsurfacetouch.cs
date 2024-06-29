@@ -315,7 +315,6 @@ namespace PSCFGDataReader
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
             public ushort[] AcquisitionTimeByDetectionState { get; set; }
             public ushort DistanceFromBorderForCropping { get; set; }
-            public ushort WidthOfBorderForCropping { get; set; }
             public ushort WidthOfBorderForForwardPrediction { get; set; }
             public ushort ForwardPredictionSpeedThreshold { get; set; }
             public ushort WidthOfBorderForForwardPredictionWhenReturningLine { get; set; }
@@ -352,6 +351,8 @@ namespace PSCFGDataReader
             public float PressureIIRFactorForExitInterpolation { get; set; }
             public float PositionOffsetIIRFactor { get; set; }
             public float PressureIIRFactor { get; set; }
+            public float TiltIIRFactor { get; set; }
+            public float AzimuthIIRFactor { get; set; }
             public float AdaptiveIIRFactor { get; set; }
             public float SpecialAlphaForCoMTypeChange { get; set; }
             public ushort PressureJitterRestrictorThreshold { get; set; }
@@ -379,10 +380,6 @@ namespace PSCFGDataReader
             public uint IsBoundPenRegionPerAxisSize { get; set; }
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
             public byte[] IsBoundPenRegionPerAxis { get; set; }
-            public uint GainSetRatioSize { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-            public float[] GainSetRatio { get; set; }
-            public byte IsForceCentroids { get; set; }
         };
 
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
