@@ -59,18 +59,5 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         {
             get; set;
         }
-        public uint GainSetRatioSize
-        {
-            get; set;
-        }
-        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-        public float[] GainSetRatio
-        {
-            get; set;
-        }
-        public byte IsForceCentroids
-        {
-            get; set;
-        }
     };
 }

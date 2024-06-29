@@ -18,10 +18,6 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         {
             get; set;
         }
-        public ushort WidthOfBorderForCropping
-        {
-            get; set;
-        }
         public ushort WidthOfBorderForForwardPrediction
         {
             get; set;

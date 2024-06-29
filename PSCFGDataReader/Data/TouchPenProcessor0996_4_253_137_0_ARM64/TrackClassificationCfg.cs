@@ -5,10 +5,6 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
     public struct TrackClassificationCfg
     {
-        public byte EnableSingleBlobModeSupport
-        {
-            get; set;
-        }
         public float MaxAntDistanceBetweenBlobAndTrack
         {
             get; set;
@@ -90,10 +86,6 @@ namespace PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64
         }
         [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
         public short[] PenInRangeLlrPenaltyPerType
-        {
-            get; set;
-        }
-        public TappingClosingWithSuspensionCfgStruct TappingClosingWithSuspensionOneBlobCfg
         {
             get; set;
         }
