@@ -27,7 +27,7 @@ namespace PSCFGDataReader
 
             if (Header.LenFile > br.BaseStream.Length)
             {
-                throw new Exception("WHAT");
+                throw new Exception("Invalid Structure Length!");
             }
 
             DecompiledProjectFile.DecompiledConfigurationFileStruct decompiledConfigurationFileStruct = new()
@@ -77,7 +77,21 @@ namespace PSCFGDataReader
 
         public static byte[] GetDecompiledConfigurationFileStructAsByteArray(DecompiledProjectFile.DecompiledConfigurationFileStruct fileStruct)
         {
-            return fileStruct.FromStructure();
+            byte[] buffer = new byte[fileStruct.Header.LenFile];
+            using MemoryStream stream = new(buffer);
+            using BinaryWriter bw = new(stream);
+
+            bw.Write(fileStruct.Header.FromStructure());
+
+            foreach (DecompiledProjectFile.DecompiledConfigSection section in fileStruct.ConfigSections)
+            {
+                bw.Write(section.Header.FromStructure());
+                bw.Write(section.Payload);
+            }
+
+            bw.Write(fileStruct.KernelConfigFileCheckSum);
+
+            return buffer;
         }
     }
 }

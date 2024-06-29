@@ -315,7 +315,7 @@ namespace PSCFGDataReader
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 5)]
             public ushort[] AcquisitionTimeByDetectionState { get; set; }
             public ushort DistanceFromBorderForCropping { get; set; }
-            //public ushort WidthOfBorderForCropping { get; set; }
+            public ushort WidthOfBorderForCropping { get; set; }
             public ushort WidthOfBorderForForwardPrediction { get; set; }
             public ushort ForwardPredictionSpeedThreshold { get; set; }
             public ushort WidthOfBorderForForwardPredictionWhenReturningLine { get; set; }
@@ -376,13 +376,13 @@ namespace PSCFGDataReader
             public byte[] PenBtnFunctionality { get; set; }
             public PenPressureAdditionalParamsStruct PenPressureAdditionalParams { get; set; }
             public HastaTrackingCfg HastaTrackingParams { get; set; }
-            /*public uint IsBoundPenRegionPerAxisSize { get; set; }
+            public uint IsBoundPenRegionPerAxisSize { get; set; }
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-            public byte[] IsBoundPenRegionPerAxis { get; set; }*/
-            /*public uint GainSetRatioSize { get; set; }
+            public byte[] IsBoundPenRegionPerAxis { get; set; }
+            public uint GainSetRatioSize { get; set; }
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
             public float[] GainSetRatio { get; set; }
-            public byte IsForceCentroids { get; set; }*/
+            public byte IsForceCentroids { get; set; }
         };
 
         [StructLayout(LayoutKind.Sequential, Pack = 4)]
@@ -409,10 +409,6 @@ namespace PSCFGDataReader
             public byte IsUseDefaultVendorData { get; set; }
             public Convert2BytesTo1ByteCfg Convert2BytesTo1Byte { get; set; }
             public byte IsEnablePenIdReport { get; set; }
-            //public byte IsRegionConfigSupported { get; set; }
-            //public byte IsEnableGenericCli { get; set; }
-            //public byte IsSendPenReportsPerScreen { get; set; }
-            //public byte IsAlwaysDumpDebugDataToFile { get; set; }
         };
 
         [StructLayout(LayoutKind.Sequential, Pack = 2)]
@@ -718,15 +714,7 @@ namespace PSCFGDataReader
             public TouchTrackCfg TouchTrack { get; set; }
         };
 
-        public enum eChipType : sbyte
-        {
-            G5 = 0x0,
-            G6 = 0x1,
-            INCELL = 0x2,
-            MAX_NUM_OF_CHIP_TYPE = 0x3,
-        };
-
-        public struct G5StaticConfig
+        public struct StaticConfig
         {
             public uint NumberOfTouchTrackWindows { get; set; }
             public uint NumberOfAtrigs { get; set; }
@@ -735,27 +723,10 @@ namespace PSCFGDataReader
             public byte[] TransmitMapAntenna { get; set; }
             public uint NumberOfTouchTrackFrequencies { get; set; }
             public uint FreqLimitsColumnSize { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 68)] // Originally 32
+            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 32)]
             public byte[] TransmitAntennaFreqLimits { get; set; }
-        };
-
-        /*[StructLayout(LayoutKind.Sequential, Pack = 2)]
-        public struct G6StaticConfig
-        {
-            public uint NumberOfTouchTrackWindows { get; set; }
-            public uint NumberOfTouchTrackFrequencies { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 160)]
-            public byte[] TransmitMapAntenna { get; set; }
-            public uint SizeInUseInjectAntFreqIndex { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 55)]
-            public byte[] InjectAntFreqIndex { get; set; }
-        };*/
-
-        public struct StaticConfig
-        {
-            //public eChipType ChipType { get; set; }
-            public G5StaticConfig G5Cfg { get; set; }
-            //public G6StaticConfig G6Cfg { get; set; }
+            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 36)]
+            public byte[] Padding { get; set; }
         };
 
         public struct JunctionRelativeAndNsrItemCfgStruct
@@ -1238,7 +1209,7 @@ namespace PSCFGDataReader
             public byte ThOok { get; set; }
         };
 
-        /*public struct PenVendorSpecificCfgType
+        public struct PenVendorSpecificCfgType
         {
             public uint PenEnergyInitialValue { get; set; }
             public uint MEMInitialValue { get; set; }
@@ -1264,7 +1235,7 @@ namespace PSCFGDataReader
             public uint ConstCentroidArrayNumOfAxes { get; set; }
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
             public float[] CentroidArray { get; set; }
-        };*/
+        };
 
         public struct PenCoMOnEdgesCoefficientsSetPerBorder
         {
@@ -1298,9 +1269,9 @@ namespace PSCFGDataReader
 
         public struct PenCenterOfMassCfg
         {
-            //public uint ConstSpecificCfgPenVendorSize { get; set; }
-            //[field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
-            //public PenVendorSpecificCfgType[] PenVendorSpecificCfg { get; set; }
+            public uint ConstSpecificCfgPenVendorSize { get; set; }
+            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+            public PenVendorSpecificCfgType[] PenVendorSpecificCfg { get; set; }
             public float MEMInkHoverLowThrHysteresisFactor { get; set; }
             public float MEMInkHoverHighThrHysteresisFactor { get; set; }
             public float PenEnergyAlpha { get; set; }
@@ -1391,11 +1362,10 @@ namespace PSCFGDataReader
             public uint[] RtiaValue { get; set; }
             public uint RtiaPerPlatformSize { get; set; }
             public uint RtiaValuePerGainSize { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)]
+            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 9)]
             public byte[] RtiaValuePerGain { get; set; }
             public uint PreLsPhaseCriteriaAmplitudeThresholdSqr { get; set; }
             public float PreLsPhaseCriteriaAngleThreshold { get; set; }
-            public float Unknown { get; set; }
             public RingValidationCfg RingValidation { get; set; }
             public byte MaxNumOfBordersCoefficients { get; set; }
             public byte IsPucHeuristicEnabled { get; set; }
@@ -1405,7 +1375,7 @@ namespace PSCFGDataReader
             public uint PenEdgesThresholdsPosCount { get; set; }
             [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 8)]
             public float[] PenEdgesThresholds { get; set; }
-            //public float BorderZfiPenVoltageRatio { get; set; }
+            public float BorderZfiPenVoltageRatio { get; set; }
         };
 
         public struct PenDigitalProcessingCfg
@@ -1417,8 +1387,6 @@ namespace PSCFGDataReader
             public short I2ILlrThreshold { get; set; }
             public short H2HLlrThreshold { get; set; }
             public byte IsInkToHoverRingEnabled { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 1)] // Originally 3
-            public byte[] Padding { get; set; }
         };
 
         public struct ZDistanceNeuralNetworkCfg

@@ -45,15 +45,15 @@
         DaedalusW = 0x0C31, // Microsoft Surface Laptop 4 (Intel)
         DaedalusE = 0x0C32, // Microsoft Surface Laptop 4 (Intel)
         Athos = 0x0C3C,
-        ErsaTouchPad = 0x0C46, // Microsoft Surface Laptop Studio 2 TouchPad
+        ErsaTouchPad = 0x0C46, // Microsoft Surface Laptop Studio 2 Touch Pad
         Zaca = 0x0C52, // Microsoft Surface Pro 9
         Indra = 0x0C59, // Microsoft Surface Laptop 5
         Avanti = 0x0C5A, // Microsoft Surface Laptop 5
         Chehalis = 0x0C5C, // Microsoft Surface Studio 2+
         Ersa = 0x0C5D, // Microsoft Surface Laptop Studio 2
-        Romulus715 = 0x0C6E, // Microsoft Surface Laptop 7 (15")
-        Romulus713 = 0x0C6F, // Microsoft Surface Laptop 7 (13.5")
-        RomulusTouchPad = 0x0C77,
+        Romulus15 = 0x0C6E, // Microsoft Surface Laptop 7 (15")
+        Romulus13 = 0x0C6F, // Microsoft Surface Laptop 7 (13.5")
+        RomulusTouchPad = 0x0C77, // Microsoft Surface Laptop 7 Touch Pad
         TouchPad0C7A = 0x0C7A,
         TouchPad0C7B = 0x0C7B,
         Gaviota = 0x0C7F, // Microsoft Surface Pro 10
@@ -61,7 +61,7 @@
         DenaliOLED = 0x0C83, // Microsoft Surface Pro 11
         Avantii15 = 0x0C88, // Microsoft Surface Laptop 6
         Avantii13 = 0x0C89, // Microsoft Surface Laptop 6
-        SurfaceFlexCoverTouchPad = 0x0C8D, // Microsoft Surface Flex Cover TouchPad
+        SurfaceFlexCoverTouchPad = 0x0C8D, // Microsoft Surface Flex Cover Touch Pad
         GaviotaALTFW = 0x19B0, // Microsoft Surface Pro 10 (Alt FW)
 
 
