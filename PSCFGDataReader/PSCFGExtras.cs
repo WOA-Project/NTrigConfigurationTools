@@ -1,5 +1,5 @@
 ﻿using PSCFGDataReader.Data;
-using PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64;
+using PSCFGDataReader.Data.TouchPenProcessor0C38_19_14_139_0_ARM64;
 using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader
@@ -75,6 +75,9 @@ namespace PSCFGDataReader
                             break;
                         case SectionId.PenZeroForceInking:
                             WriteSectionAsXml<PenZeroForceInkingCfg>(section, sectionId, FilePath, br);
+                            break;
+                        case SectionId.Unknown64:
+                            WriteSectionAsXml<Unknown64Cfg>(section, sectionId, FilePath, br);
                             break;
                     }
                 }

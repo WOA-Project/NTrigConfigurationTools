@@ -18,5 +18,6 @@
         PenCenterOfMass = 61,
         PenDigitalProcessing = 62,
         PenZeroForceInking = 63,
+        Unknown64 = 64,
     }
 }

@@ -1,4 +1,4 @@
-﻿using PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64;
+﻿using PSCFGDataReader.Data.TouchPenProcessor0C38_19_14_139_0_ARM64;
 
 namespace PSCFGDataReader
 {
