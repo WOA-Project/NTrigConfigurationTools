@@ -1,5 +1,6 @@
 ﻿using System.Runtime.InteropServices;
-using static PSCFGDataReader.PSCFGData_TouchPenProcessor0C37;
+using PSCFGDataReader.Data;
+using PSCFGDataReader.Data.TouchPenProcessor0C37_15_15_137_0_AMD64;
 
 namespace PSCFGDataReader
 {
