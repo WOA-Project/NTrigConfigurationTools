@@ -2,6 +2,9 @@ using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader
 {
+    // TouchPenProcessor0C37.dll
+    // Version 15.15.137.0
+    // AMD64
     public static class PSCFGData_TouchPenProcessor0C37
     {
         public struct ConfigVersionStruct

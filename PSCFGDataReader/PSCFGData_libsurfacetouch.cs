@@ -2,6 +2,9 @@ using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader
 {
+    // libsurfacetouch.so (OEMB1)
+    // Version 2022.902.48
+    // ARM64
     public static class PSCFGData_libsurfacetouch
     {
         public struct ConfigVersionStruct
