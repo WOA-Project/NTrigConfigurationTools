@@ -1,8 +1,14 @@
-﻿namespace PSCFGDataReader.Data.libsurfacetouchOEMB12022_902_48_ARM64
+﻿namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
 {
     public struct KalmanConfigCfg
+    {
+        public KalmanVelocitiesConfigCfg KalmanVelocitiesConfig
         {
-            public KalmanVelocitiesConfigCfg KalmanVelocitiesConfig { get; set; }
-            public KalmanLUTCfg KalmanLUT { get; set; }
-        };
+            get; set;
+        }
+        public KalmanLUTCfg KalmanLUT
+        {
+            get; set;
+        }
+    };
 }

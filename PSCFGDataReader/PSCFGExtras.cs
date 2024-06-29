@@ -1,6 +1,6 @@
-﻿using System.Runtime.InteropServices;
-using PSCFGDataReader.Data;
+﻿using PSCFGDataReader.Data;
 using PSCFGDataReader.Data.TouchPenProcessor0C37_15_15_137_0_AMD64;
+using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader
 {
@@ -103,7 +103,7 @@ namespace PSCFGDataReader
 
         public static void ParseRaw2(string SourceFilePath, string DestFilePath)
         {
-            List<(ConfigSectionHeader sectionHeader, long offset)> mapping = new();
+            List<(ConfigSectionHeader sectionHeader, long offset)> mapping = [];
 
             using FileStream destinationStream = File.Open(DestFilePath, FileMode.Open, FileAccess.ReadWrite);
             using BinaryReader destinationBr = new(destinationStream);
@@ -116,7 +116,7 @@ namespace PSCFGDataReader
             {
                 ConfigSectionHeader sectionHeader = destinationBr.FromBinaryReader<ConfigSectionHeader>();
                 mapping.Add((sectionHeader, destinationStream.Position));
-                destinationStream.Seek(sectionHeader.Len, SeekOrigin.Current); // Skip payload for now
+                _ = destinationStream.Seek(sectionHeader.Len, SeekOrigin.Current); // Skip payload for now
             }
 
             using FileStream sourceStream = File.OpenRead(SourceFilePath);
@@ -151,7 +151,7 @@ namespace PSCFGDataReader
                     if (sectionHeader.Id == sourceSectionHeader.Id && sectionHeader.Len == payload.Length)
                     {
                         Console.WriteLine($"Writing at {offset}...");
-                        destinationStream.Seek(offset, SeekOrigin.Begin);
+                        _ = destinationStream.Seek(offset, SeekOrigin.Begin);
                         destinationStream.Write(payload, 0, payload.Length);
                     }
                 }

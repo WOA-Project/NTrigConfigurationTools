@@ -3,14 +3,32 @@
 namespace PSCFGDataReader.Data.TouchPenProcessor0C37_15_15_137_0_AMD64
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        public struct PenOnBlackPrintStruct
+    public struct PenOnBlackPrintStruct
+    {
+        public uint NumOfGainSets
         {
-            public uint NumOfGainSets { get; set; }
-            [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-            public BlackPrintThresholds[] PenOnBlackPrintThresholdsPerGainset { get; set; }
-            public BlackPrintThresholdsHoverNearBorder BlackPrintThresholdsHoverNearBorderStruct { get; set; }
-            public PenOnBlackPrintWithNoiseNearPenCfg PenOnBlackPrintWithNoiseNearPenStruct { get; set; }
-            public byte NumOfAntsEachSideOfPeakForSkirt { get; set; }
-            public byte IsPenOnBlackPrintEnabled { get; set; }
-        };
+            get; set;
+        }
+        [field: MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+        public BlackPrintThresholds[] PenOnBlackPrintThresholdsPerGainset
+        {
+            get; set;
+        }
+        public BlackPrintThresholdsHoverNearBorder BlackPrintThresholdsHoverNearBorderStruct
+        {
+            get; set;
+        }
+        public PenOnBlackPrintWithNoiseNearPenCfg PenOnBlackPrintWithNoiseNearPenStruct
+        {
+            get; set;
+        }
+        public byte NumOfAntsEachSideOfPeakForSkirt
+        {
+            get; set;
+        }
+        public byte IsPenOnBlackPrintEnabled
+        {
+            get; set;
+        }
+    };
 }

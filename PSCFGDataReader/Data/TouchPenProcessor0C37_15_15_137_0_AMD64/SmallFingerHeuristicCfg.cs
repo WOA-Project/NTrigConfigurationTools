@@ -3,10 +3,19 @@
 namespace PSCFGDataReader.Data.TouchPenProcessor0C37_15_15_137_0_AMD64
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        public struct SmallFingerHeuristicCfg
+    public struct SmallFingerHeuristicCfg
+    {
+        public float SmallBlobHeuristicsBlobMaxValue
         {
-            public float SmallBlobHeuristicsBlobMaxValue { get; set; }
-            public byte SmallBlobHeuristicsMaxWidth { get; set; }
-            public byte SmallBlobHeuristicsMaxHeight { get; set; }
-        };
+            get; set;
+        }
+        public byte SmallBlobHeuristicsMaxWidth
+        {
+            get; set;
+        }
+        public byte SmallBlobHeuristicsMaxHeight
+        {
+            get; set;
+        }
+    };
 }

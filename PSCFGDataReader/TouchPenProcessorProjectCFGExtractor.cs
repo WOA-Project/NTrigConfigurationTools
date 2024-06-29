@@ -44,7 +44,7 @@ namespace PSCFGDataReader
 
         public static byte[][] LocateAndExtractEveryPSDBInTouchPenProcessorBinary(string FilePath)
         {
-            List<byte[]> PSCFGs = new();
+            List<byte[]> PSCFGs = [];
 
             byte[] fileBuffer = File.ReadAllBytes(FilePath);
             using Stream stream = File.OpenRead(FilePath);
@@ -55,7 +55,7 @@ namespace PSCFGDataReader
 
             while ((index = findSequence(fileBuffer, start, Constants.PSDBHeader)) != -1)
             {
-                stream.Seek(index, SeekOrigin.Begin);
+                _ = stream.Seek(index, SeekOrigin.Begin);
                 ConfigHeaderStruct Header = br.FromBinaryReader<ConfigHeaderStruct>();
 
                 if (Header.LenFile <= fileBuffer.Length - index) //&& Header.LenFile > 0)
@@ -66,7 +66,7 @@ namespace PSCFGDataReader
                         lengthToRead = fileBuffer.Length - index;
                     }
 
-                    stream.Seek(index, SeekOrigin.Begin);
+                    _ = stream.Seek(index, SeekOrigin.Begin);
                     byte[] buffer = br.ReadBytes(lengthToRead);
 
                     PSCFGs.Add(buffer);

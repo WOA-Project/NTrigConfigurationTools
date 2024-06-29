@@ -1,11 +1,17 @@
 ﻿using System.Runtime.InteropServices;
 
-namespace PSCFGDataReader.Data.libsurfacetouchOEMB12022_902_48_ARM64
+namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
 {
     [StructLayout(LayoutKind.Sequential, Pack = 4)]
-        public struct TelemetryCfg
+    public struct TelemetryCfg
+    {
+        public float TimeoutInSeconds
         {
-            public float TimeoutInSeconds { get; set; }
-            public byte Enabled { get; set; }
-        };
+            get; set;
+        }
+        public byte Enabled
+        {
+            get; set;
+        }
+    };
 }

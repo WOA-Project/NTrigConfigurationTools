@@ -6,18 +6,33 @@ namespace PSCFGDataReader
     {
         public struct DecompiledConfigSection
         {
-            public ConfigSectionHeader Header { get; set; }
+            public ConfigSectionHeader Header
+            {
+                get; set;
+            }
 
-            public byte[] Payload { get; set; }
+            public byte[] Payload
+            {
+                get; set;
+            }
         }
 
         public struct DecompiledConfigurationFileStruct
         {
-            public ConfigHeaderStruct Header { get; set; }
+            public ConfigHeaderStruct Header
+            {
+                get; set;
+            }
 
-            public DecompiledConfigSection[] ConfigSections { get; set; }
+            public DecompiledConfigSection[] ConfigSections
+            {
+                get; set;
+            }
 
-            public ushort KernelConfigFileCheckSum { get; set; }
+            public ushort KernelConfigFileCheckSum
+            {
+                get; set;
+            }
         };
     }
 }

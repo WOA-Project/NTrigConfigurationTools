@@ -1,8 +1,14 @@
-﻿namespace PSCFGDataReader.Data.libsurfacetouchOEMB12022_902_48_ARM64
+﻿namespace PSCFGDataReader.Data.libsurfacetouchOEMB1_2022_902_48_ARM64
 {
     public struct HoverHeightFactorThreshold
+    {
+        public uint Threshold
         {
-            public uint Threshold { get; set; }
-            public float HoverHeightFactor { get; set; }
-        };
+            get; set;
+        }
+        public float HoverHeightFactor
+        {
+            get; set;
+        }
+    };
 }
