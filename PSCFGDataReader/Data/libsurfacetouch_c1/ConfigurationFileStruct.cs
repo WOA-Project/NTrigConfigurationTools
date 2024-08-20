@@ -2,7 +2,6 @@ using System.Runtime.InteropServices;
 
 namespace PSCFGDataReader.Data.libsurfacetouch_c1
 {
-
     [StructLayout(LayoutKind.Sequential, Pack = 2)]
     public struct ConfigurationFileStruct
     {
@@ -127,6 +126,14 @@ namespace PSCFGDataReader.Data.libsurfacetouch_c1
             get; set;
         }
         public PenDigitalProcessingCfg PenDigitalProcessingPayload
+        {
+            get; set;
+        }
+        public ConfigSectionHeader PenZeroForceInkingHeader
+        {
+            get; set;
+        }
+        public PenZeroForceInkingCfg PenZeroForceInkingPayload
         {
             get; set;
         }

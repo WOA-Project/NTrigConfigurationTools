@@ -82,5 +82,9 @@ namespace PSCFGDataReader.Data.libsurfacetouch_c1
         {
             get; set;
         }
+        public uint Unknown0
+        {
+            get; set;
+        }
     };
 }
