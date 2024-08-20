@@ -2,7 +2,7 @@
 
 namespace PSCFGDataReader.Data.libsurfacetouch_c1
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct HastaStretchingOnBorderConfig
     {
         public uint NumberOfAcquisitionTimeByDetectionState

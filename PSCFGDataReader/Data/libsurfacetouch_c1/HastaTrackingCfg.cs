@@ -2,9 +2,14 @@
 
 namespace PSCFGDataReader.Data.libsurfacetouch_c1
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public struct HastaTrackingCfg
     {
         public HastaStretchingOnBorderConfig HastaStretchingPointOnBorderCfg
+        {
+            get; set;
+        }
+        public byte Unknown0
         {
             get; set;
         }
@@ -32,6 +37,10 @@ namespace PSCFGDataReader.Data.libsurfacetouch_c1
         {
             get; set;
         }
+        public byte Unknown1
+        {
+            get; set;
+        }
         public ushort MatchingTrackOpenThreshold
         {
             get; set;
@@ -52,6 +61,10 @@ namespace PSCFGDataReader.Data.libsurfacetouch_c1
         {
             get; set;
         }
+        public ushort Unknown2
+        {
+            get; set;
+        }
         public uint IIRAndJitterParamsLen
         {
             get; set;
@@ -62,6 +75,10 @@ namespace PSCFGDataReader.Data.libsurfacetouch_c1
             get; set;
         }
         public ushort PressureGradientForExitInterpolation
+        {
+            get; set;
+        }
+        public ushort Unknown3
         {
             get; set;
         }
