@@ -7,6 +7,8 @@ using PSCFGDataReader.Data.TouchPenProcessor0C37_15_15_137_0_AMD64;
 using PSCFGDataReader.Data.TouchPenProcessor0C38_19_14_139_0_ARM64;
 #elif RELEASE_TOUCHPENPROCESSOR0996_4_253_137_0_ARM64 || DEBUG_TOUCHPENPROCESSOR0996_4_253_137_0_ARM64
 using PSCFGDataReader.Data.TouchPenProcessor0996_4_253_137_0_ARM64;
+#elif RELEASE_LIBSURFACETOUCH_C1 || DEBUG_LIBSURFACETOUCH_C1
+using PSCFGDataReader.Data.libsurfacetouch_c1;
 #else
 #error No processor defined
 #endif

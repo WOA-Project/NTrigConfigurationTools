@@ -4,6 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <Configurations>Release-libsurfacetouchOEMB1_2022_902_48_ARM64;Release-TouchPenProcessor0C37_15_15_137_0_AMD64;Release-TouchPenProcessor0C38_19_14_139_0_ARM64;Release-TouchPenProcessor0996_4_253_137_0_ARM64;Debug-libsurfacetouchOEMB1_2022_902_48_ARM64;Debug-TouchPenProcessor0C37_15_15_137_0_AMD64;Debug-TouchPenProcessor0C38_19_14_139_0_ARM64;Debug-TouchPenProcessor0996_4_253_137_0_ARM64</Configurations>
+    <Configurations>Release-libsurfacetouchOEMB1_2022_902_48_ARM64;Release-TouchPenProcessor0C37_15_15_137_0_AMD64;Release-TouchPenProcessor0C38_19_14_139_0_ARM64;Release-TouchPenProcessor0996_4_253_137_0_ARM64;Debug-libsurfacetouchOEMB1_2022_902_48_ARM64;Debug-TouchPenProcessor0C37_15_15_137_0_AMD64;Debug-TouchPenProcessor0C38_19_14_139_0_ARM64;Debug-TouchPenProcessor0996_4_253_137_0_ARM64;Debug-libsurfacetouch_c1;Release-libsurfacetouch_c1</Configurations>
   </PropertyGroup>
 </Project>

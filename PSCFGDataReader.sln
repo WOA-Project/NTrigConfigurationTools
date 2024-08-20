@@ -6,16 +6,20 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSCFGDataReader", "PSCFGDat
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug-libsurfacetouch_c1|Any CPU = Debug-libsurfacetouch_c1|Any CPU
 		Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU = Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		Debug-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU = Debug-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU
 		Debug-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU = Debug-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU
 		Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU = Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU
+		Release-libsurfacetouch_c1|Any CPU = Release-libsurfacetouch_c1|Any CPU
 		Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU = Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		Release-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU = Release-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU
 		Release-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU = Release-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU
 		Release-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU = Release-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-libsurfacetouch_c1|Any CPU.ActiveCfg = Debug-libsurfacetouch_c1|Any CPU
+		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-libsurfacetouch_c1|Any CPU.Build.0 = Debug-libsurfacetouch_c1|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU.ActiveCfg = Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU.Build.0 = Debug-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU.ActiveCfg = Debug-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU
@@ -24,6 +28,8 @@ Global
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU.Build.0 = Debug-TouchPenProcessor0C37_15_15_137_0_AMD64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU.ActiveCfg = Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU.Build.0 = Debug-TouchPenProcessor0C38_19_14_139_0_ARM64|Any CPU
+		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Release-libsurfacetouch_c1|Any CPU.ActiveCfg = Release-libsurfacetouch_c1|Any CPU
+		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Release-libsurfacetouch_c1|Any CPU.Build.0 = Release-libsurfacetouch_c1|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU.ActiveCfg = Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU.Build.0 = Release-libsurfacetouchOEMB1_2022_902_48_ARM64|Any CPU
 		{DD4B0B4E-3683-4BB4-90DB-8FA6BB1A47C0}.Release-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU.ActiveCfg = Release-TouchPenProcessor0996_4_253_137_0_ARM64|Any CPU
